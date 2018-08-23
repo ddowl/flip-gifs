@@ -1,22 +1,24 @@
 import * as React from 'react';
-import GifPlayer from './GifPlayer'
 import './Body.css';
+import { Carousel } from 'react-bootstrap';
 
-let gifNames = ['alc', 'brown', 'camera', 'handrail', 'human', 'interview', 'trampoline'];
+const gifNames = ['alc', 'brown', 'camera', 'handrail', 'human', 'interview', 'trampoline'];
 
-let gifUrls = gifNames.map((name) => {
-  return `gifs/${name}-flip.gif`
+const carouselItems = gifNames.map((name, i) => {
+  return (
+    <Carousel.Item key={i}>
+      <img key={i} src={`gifs/${name}-flip.gif`} />
+    </Carousel.Item>
+  );
 });
 
 class Body extends React.Component {
   public render() {
-    const gifs = gifUrls.map((url, i) => {
-      return <GifPlayer key={i} src={url} />
-    });
     return (
       <div className="Body">
-        This is the Body!
-        { gifs }
+        <Carousel interval={ null }>
+          { carouselItems }
+        </Carousel>;
       </div>
     );
   }

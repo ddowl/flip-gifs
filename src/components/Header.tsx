@@ -1,15 +1,18 @@
 import * as React from 'react';
 import './Header.css';
-import bottle from 'src/bottle.svg';
 
 class Header extends React.Component {
   public render() {
+    const bottleLogo = (style: any) => (
+      <img src="images/bottle.svg" className={`App-logo ${style}`} alt="logo" />
+    );
+
     return (
       <div className="Header">
-      <header className="App-header">
-          <img src={bottle} className="App-logo" alt="logo" />
+        <header className="App-header">
+          { bottleLogo('left-logo') }
           <h1 className="App-title">Flippin' Bottles</h1>
-          <h3>This is the Header!</h3>
+          { bottleLogo('right-logo') }
         </header>
       </div>
     );
