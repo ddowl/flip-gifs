@@ -1,25 +1,35 @@
-.left-logo {
-  float: left
-}
+.Header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 1em;
 
-.right-logo {
-  float: right
-}
-
-.App-header {
   background-color: #222;
-  height: 300px;
   padding: 20px;
   color: white;
 }
 
 .App-title {
-  /* font-size: 1.5em; */
-  vertical-align: middle; /*Vertically centered*/
-  text-align: center; /* Horizontally centered */
+  align-self: center;
+  font-size: 6vw;
+  font-weight: bold;
+  font-style: italic;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 70%;
+.animate-logo-fast {
+  animation: logo-spin infinite 10s linear;
+}
+
+.animate-logo-slow {
+  animation: logo-spin infinite 15s linear;
+}
+
+.fit-logo {
+  max-width:100%;
+  max-height:100%;
+  margin:auto;
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
